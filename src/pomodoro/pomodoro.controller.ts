@@ -43,7 +43,7 @@ export class PomodoroController {
 
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
-	@Put('/round/:id')
+	@Put(':id')
 	@Auth()
 	async update(
 		@Body() dto: PomodoroSessionDto,

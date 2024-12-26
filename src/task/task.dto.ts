@@ -9,7 +9,7 @@ export class TaskDto {
 	name: string
 
 	@IsBoolean()
-	@IsString()
+	@IsOptional()
 	isCompleted?: boolean
 
 	@IsString()
