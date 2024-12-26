@@ -1,4 +1,3 @@
-import { Optional } from '@nestjs/common'
 import {
 	IsEmail,
 	IsNumber,
@@ -28,15 +27,15 @@ export class PomodoroSettingsDto {
 
 export class UserDto extends PomodoroSettingsDto {
 	@IsEmail()
-	@Optional()
+	@IsOptional()
 	email?: string
 
 	@IsString()
-	@Optional()
+	@IsOptional()
 	name?: string
 
 	@IsString()
-	@Optional()
+	@IsOptional()
 	@MinLength(6, {
 		message: 'Password must be at leas 6 characters long'
 	})
