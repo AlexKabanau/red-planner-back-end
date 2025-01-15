@@ -8,10 +8,16 @@ async function bootstrap() {
 	app.setGlobalPrefix('api')
 	app.use(cookieParser())
 	app.enableCors({
-		origin: ['http://localhost:3001'],
+		origin: ['http://localhost:3000'],
 		credentials: true,
-		// allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
-		// methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
+		allowedHeaders: [
+			'Origin',
+			'X-Requested-With',
+			'Content-Type',
+			'Accept',
+			'Authorization'
+		],
+		methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
 		exposedHeaders: 'set-cookie'
 	})
 
