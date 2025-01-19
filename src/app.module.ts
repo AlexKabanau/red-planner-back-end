@@ -5,15 +5,19 @@ import { ConfigModule } from '@nestjs/config'
 import { TaskModule } from './task/task.module'
 import { TimeBlockModule } from './time-block/time-block.module'
 import { PomodoroModule } from './pomodoro/pomodoro.module'
+import { AppController } from './app.controller'
+import { AppService } from './app.service'
 
 @Module({
+	controllers: [AppController],
 	imports: [
-		ConfigModule.forRoot(),
+		// ConfigModule.forRoot(),
 		AuthModule,
 		UserModule,
 		TaskModule,
 		TimeBlockModule,
 		PomodoroModule
-	]
+	],
+	providers: [AppService]
 })
 export class AppModule {}
