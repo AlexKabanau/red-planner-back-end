@@ -108,7 +108,7 @@ export class AuthService {
 			// true for production
 			secure: true,
 			// lax for production
-			sameSite: 'none'
+			sameSite: 'lax'
 		})
 	}
 }
