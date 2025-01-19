@@ -9,15 +9,15 @@ import { AppController } from './app.controller'
 import { AppService } from './app.service'
 
 @Module({
-	controllers: [AppController],
+	// controllers: [AppController],
 	imports: [
-		// ConfigModule.forRoot(),
+		ConfigModule.forRoot(),
 		AuthModule,
 		UserModule,
 		TaskModule,
 		TimeBlockModule,
 		PomodoroModule
-	],
-	providers: [AppService]
+	]
+	// providers: [AppService]
 })
 export class AppModule {}
