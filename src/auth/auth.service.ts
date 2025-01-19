@@ -100,6 +100,8 @@ export class AuthService {
 			// lax for production
 			sameSite: 'none'
 		})
+		res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
+		res.setHeader('Access-Control-Allow-Credentials', 'true')
 	}
 	removeRefreshTokenToResponse(res: Response) {
 		res.cookie(this.REFRESH_TOKEN_NAME, '', {
