@@ -92,7 +92,7 @@ export class AuthService {
 
 		res.cookie(this.REFRESH_TOKEN_NAME, refreshToken, {
 			httpOnly: true,
-			domain: 'https://red-planner-back-end-production.up.railway.app/',
+			domain: 'red-planner-back-end-production.up.railway.app',
 			expires: expiresIn,
 			// true for production
 			secure: true,
