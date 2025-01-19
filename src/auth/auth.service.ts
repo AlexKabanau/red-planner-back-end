@@ -95,7 +95,7 @@ export class AuthService {
 			domain: 'red-planner-back-end-production.up.railway.app',
 			expires: expiresIn,
 			// true for production
-			secure: true,
+			secure: false,
 			// lax for production
 			sameSite: 'lax'
 		})
@@ -103,10 +103,10 @@ export class AuthService {
 	removeRefreshTokenToResponse(res: Response) {
 		res.cookie(this.REFRESH_TOKEN_NAME, '', {
 			httpOnly: true,
-			domain: 'localhost',
+			domain: 'red-planner-back-end-production.up.railway.app',
 			expires: new Date(0),
 			// true for production
-			secure: true,
+			secure: false,
 			// lax for production
 			sameSite: 'lax'
 		})
