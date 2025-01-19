@@ -97,7 +97,7 @@ export class AuthService {
 			// true for production
 			secure: true,
 			// lax for production
-			sameSite: 'lax'
+			sameSite: 'none'
 		})
 	}
 	removeRefreshTokenToResponse(res: Response) {
@@ -108,7 +108,7 @@ export class AuthService {
 			// true for production
 			secure: true,
 			// lax for production
-			sameSite: 'lax'
+			sameSite: 'none'
 		})
 	}
 }
