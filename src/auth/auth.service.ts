@@ -94,7 +94,7 @@ export class AuthService {
 			httpOnly: true,
 			expires: expiresIn,
 			sameSite: 'none', // для кросс-доменных запросов
-			secure: false // отключить для локальной разработки
+			secure: true // отключить для локальной разработки
 		})
 		// res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
 		// res.setHeader('Access-Control-Allow-Credentials', 'true')
@@ -103,7 +103,10 @@ export class AuthService {
 		res.cookie(this.REFRESH_TOKEN_NAME, '', {
 			httpOnly: true,
 			// domain: 'red-planner-back-end-production.up.railway.app',
-			expires: new Date(0)
+			expires: new Date(0),
+			sameSite: 'none', // для кросс-доменных запросов
+			secure: true // отключить для локальной разработки
+
 			// true for production
 			// secure: true,
 			// lax for production
