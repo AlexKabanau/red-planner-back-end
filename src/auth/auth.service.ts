@@ -96,7 +96,7 @@ export class AuthService {
 			expires: expiresIn,
 			sameSite: 'none', // для кросс-доменных запросов
 			secure: true, // отключить для локальной разработки
-			domain: 'localhost'
+			domain: 'red-planner-back-end-production.up.railway.app'
 		})
 		// res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
 		// res.setHeader('Access-Control-Allow-Credentials', 'true')
