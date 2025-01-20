@@ -92,22 +92,22 @@ export class AuthService {
 
 		res.cookie(this.REFRESH_TOKEN_NAME, refreshToken, {
 			httpOnly: true,
-			expires: expiresIn,
-			secure: process.env.NODE_ENV === 'production', // true только на проде
-			sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax' // none для кросс-доменного взаимодействия
+			expires: expiresIn
+			// secure: process.env.NODE_ENV === 'production', // true только на проде
+			// sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax' // none для кросс-доменного взаимодействия
 		})
-		res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
-		res.setHeader('Access-Control-Allow-Credentials', 'true')
+		// res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
+		// res.setHeader('Access-Control-Allow-Credentials', 'true')
 	}
 	removeRefreshTokenToResponse(res: Response) {
 		res.cookie(this.REFRESH_TOKEN_NAME, '', {
 			httpOnly: true,
-			domain: 'red-planner-back-end-production.up.railway.app',
-			expires: new Date(0),
+			// domain: 'red-planner-back-end-production.up.railway.app',
+			expires: new Date(0)
 			// true for production
-			secure: true,
+			// secure: true,
 			// lax for production
-			sameSite: 'none'
+			// sameSite: 'none'
 		})
 	}
 }
