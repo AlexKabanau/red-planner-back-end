@@ -93,9 +93,8 @@ export class AuthService {
 		res.cookie(this.REFRESH_TOKEN_NAME, refreshToken, {
 			httpOnly: true,
 			expires: expiresIn,
-			domain: 'localhost'
-			// secure: process.env.NODE_ENV === 'production', // true только на проде
-			// sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax' // none для кросс-доменного взаимодействия
+			sameSite: 'none', // для кросс-доменных запросов
+			secure: false // отключить для локальной разработки
 		})
 		// res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
 		// res.setHeader('Access-Control-Allow-Credentials', 'true')
