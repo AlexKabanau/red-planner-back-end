@@ -92,6 +92,7 @@ export class AuthService {
 
 		res.cookie(this.REFRESH_TOKEN_NAME, refreshToken, {
 			httpOnly: true,
+			path: '/',
 			expires: expiresIn,
 			sameSite: 'none', // для кросс-доменных запросов
 			secure: true // отключить для локальной разработки
