@@ -92,7 +92,8 @@ export class AuthService {
 
 		res.cookie(this.REFRESH_TOKEN_NAME, refreshToken, {
 			httpOnly: true,
-			expires: expiresIn
+			expires: expiresIn,
+			domain: 'localhost'
 			// secure: process.env.NODE_ENV === 'production', // true только на проде
 			// sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax' // none для кросс-доменного взаимодействия
 		})
