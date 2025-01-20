@@ -22,7 +22,7 @@ async function bootstrap() {
 			'Authorization'
 		],
 		methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-		exposedHeaders: 'set-cookie'
+		exposedHeaders: ['set-cookie']
 	})
 
 	await app.listen(port)
