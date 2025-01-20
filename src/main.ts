@@ -12,7 +12,7 @@ async function bootstrap() {
 	app.setGlobalPrefix('api')
 	app.use(cookieParser())
 	app.enableCors({
-		origin: 'https://red-planner-front-end-production.up.railway.app/',
+		origin: 'https://red-planner-front-end-production.up.railway.app',
 		credentials: true,
 		allowedHeaders: [
 			'Origin',
