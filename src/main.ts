@@ -12,7 +12,7 @@ async function bootstrap() {
 	app.setGlobalPrefix('api')
 	app.use(cookieParser())
 	app.enableCors({
-		origin: 'https://red-planner-front-end-wheat.vercel.app',
+		origin: 'https://red-planner-front-end-production.up.railway.app/',
 		credentials: true,
 		allowedHeaders: [
 			'Origin',
@@ -22,7 +22,7 @@ async function bootstrap() {
 			'Authorization'
 		],
 		methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-		exposedHeaders: ['set-cookie']
+		exposedHeaders: 'set-cookie'
 	})
 
 	await app.listen(port)
