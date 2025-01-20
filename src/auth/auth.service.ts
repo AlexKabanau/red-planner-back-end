@@ -94,7 +94,7 @@ export class AuthService {
 			httpOnly: true,
 			path: '/',
 			expires: expiresIn,
-			sameSite: 'none', // для кросс-доменных запросов
+			sameSite: 'lax', // для кросс-доменных запросов
 			secure: true, // отключить для локальной разработки
 			domain: 'red-planner-back-end-production.up.railway.app'
 		})
