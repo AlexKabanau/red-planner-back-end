@@ -10,11 +10,10 @@ import {
 	UsePipes,
 	ValidationPipe
 } from '@nestjs/common'
-
-import { PomodoroService } from './pomodoro.service'
 import { Auth } from 'src/auth/decorators/auth.decorator'
 import { CurrentUser } from 'src/auth/decorators/user.decorator'
 import { PomodoroRoundDto, PomodoroSessionDto } from './pomodoro.dto'
+import { PomodoroService } from './pomodoro.service'
 
 @Controller('user/timer')
 export class PomodoroController {
@@ -22,7 +21,7 @@ export class PomodoroController {
 
 	@Get('today')
 	@Auth()
-	async getTodaySesson(@CurrentUser('id') userId: string) {
+	async getTodaySession(@CurrentUser('id') userId: string) {
 		return this.pomodoroService.getTodaySession(userId)
 	}
 
@@ -60,6 +59,6 @@ export class PomodoroController {
 		@Param('id') id: string,
 		@CurrentUser('id') userId: string
 	) {
-		return this.pomodoroService.deleteSesion(id, userId)
+		return this.pomodoroService.deleteSession(id, userId)
 	}
 }

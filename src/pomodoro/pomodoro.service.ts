@@ -27,9 +27,9 @@ export class PomodoroService {
 	}
 
 	async create(userId: string) {
-		const todaySessions = await this.getTodaySession(userId)
+		const todaySession = await this.getTodaySession(userId)
 
-		if (todaySessions) return todaySessions
+		if (todaySession) return todaySession
 
 		const user = await this.prisma.user.findUnique({
 			where: {
@@ -86,7 +86,7 @@ export class PomodoroService {
 		})
 	}
 
-	async deleteSesion(sessionId: string, userId: string) {
+	async deleteSession(sessionId: string, userId: string) {
 		return this.prisma.pomodoroSession.delete({
 			where: {
 				id: sessionId,
